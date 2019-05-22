@@ -1,7 +1,5 @@
 # knative-nextgen
 
-https://api.ocp4.sandbox438.opentlc.com:6443
-
 ```bash
 
 oc expose svc istio-ingressgateway --hostname=greeter.nextgen-paris.apps.ocp4.sandbox438.opentlc.com --name=greeter-xx -n istio-system
