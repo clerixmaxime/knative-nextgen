@@ -1,0 +1,21 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Configuration
+metadata:
+  name: greeter
+spec:
+  revisionTemplate:
+    metadata:
+      labels:
+        app: greeter
+    spec:
+      container:
+        image: docker.io/clrxm/knative-greeter:latest
+        env: 
+          - name: MESSAGE_PREFIX
+            value: Namaste
+        livenessProbe:
+          httpGet:
+            path: /healthz
+        readinessProbe:
+          httpGet:
+            path: /healthz

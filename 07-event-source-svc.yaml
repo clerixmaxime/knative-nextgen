@@ -1,0 +1,11 @@
+apiVersion: sources.eventing.knative.dev/v1alpha1
+kind: CronJobSource
+metadata:
+  name: event-greeter-cronjob-source
+spec:
+  schedule: "* * * * *"
+  data: '{"message": "Thanks for attending Knative Demo at NextGen Apps Day"}'
+  sink:
+    apiVersion: serving.knative.dev/v1alpha1
+    kind: Service
+    name: event-greeter
